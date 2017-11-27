@@ -1,0 +1,85 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - AsyncDisplayKit (1.9.91):
+    - AsyncDisplayKit/PINRemoteImage (= 1.9.91)
+  - AsyncDisplayKit/ASDealloc2MainObject (1.9.91)
+  - AsyncDisplayKit/Core (1.9.91):
+    - AsyncDisplayKit/ASDealloc2MainObject
+  - AsyncDisplayKit/PINRemoteImage (1.9.91):
+    - AsyncDisplayKit/Core
+    - PINRemoteImage/iOS (= 3.0.0-beta.3)
+  - JTSImageViewController (1.5.1)
+  - KMNavigationBarTransition (0.0.10)
+  - MBProgressHUD (1.0.0)
+  - MXParallaxHeader (0.6.0)
+  - PINCache (3.0.1-beta)
+  - PINRemoteImage/Core (3.0.0-beta.3):
+    - PINCache (>= 3.0.0-beta)
+  - PINRemoteImage/iOS (3.0.0-beta.3):
+    - PINRemoteImage/Core
+  - SDCycleScrollView (1.65):
+    - SDWebImage (~> 3.7)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - TOWebViewController (2.2.6):
+    - TOWebViewController/Core (= 2.2.6)
+  - TOWebViewController/Core (2.2.6)
+  - TYAttributedLabel (2.6.2)
+  - TYPagerController (1.0.2)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
+
+DEPENDENCIES:
+  - AFNetworking
+  - AsyncDisplayKit (~> 1.9.91)
+  - JTSImageViewController
+  - KMNavigationBarTransition
+  - MBProgressHUD
+  - MXParallaxHeader
+  - SDCycleScrollView
+  - TOWebViewController
+  - TYAttributedLabel (~> 2.6.2)
+  - TYPagerController
+  - YYWebImage
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AsyncDisplayKit: 96b6939ccc95d18ce1ac9bcaddecfba3f8b4f4af
+  JTSImageViewController: 1f8ce1cc93dab0d0af8e53badeea7528560cfec9
+  KMNavigationBarTransition: 7a519f915cfe6fe09764b2061ea01043b445f7d2
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MXParallaxHeader: 2997592b8349baf8557ae0e4346f6b17e141de39
+  PINCache: 6911fe422a633e18b3d3ddf2bd4f0e55e36e2892
+  PINRemoteImage: 308731aa6534500e58fc211b9cc2bb7252df25ba
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  TOWebViewController: a29908019f7e0e0f8eccfab8a1ee8dcdf4fc5aac
+  TYAttributedLabel: 1c1f1e7604043ba584e005d4fd3aee8a1a7a2020
+  TYPagerController: 0b3e3e589a217ff537d5f78e1e76594beaa4cfc6
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
+
+PODFILE CHECKSUM: f8eed14084cd68f3bc3f4109c11d6c0510c4c81b
+
+COCOAPODS: 1.0.1

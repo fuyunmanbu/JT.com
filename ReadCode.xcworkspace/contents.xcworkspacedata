@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "container:"
+      name = "&#x672a;&#x8bfb;">
+      <FileRef
+         location = "group:UILabel-TextAlignmentExpand-master/UILabel_TextAlignmentDemo.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "&#x5728;&#x8bfb;">
+      <FileRef
+         location = "group:LovePlayNews-ADSK&#x6d41;&#x7545;&#x9879;&#x76ee;/LovePlayNews.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:ADModel&#xff08;&#x7ffb;&#x8bd1;YYModel&#xff09;/ADModel.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "&#x5df2;&#x8bfb;">
+      <FileRef
+         location = "group:FDTemplateLayoutCell-&#x6d41;&#x7545;&#x6027;&#x6ce8;&#x91ca;/Demo/Demo.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>
