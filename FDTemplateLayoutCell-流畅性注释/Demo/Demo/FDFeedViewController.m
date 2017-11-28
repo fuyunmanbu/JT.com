@@ -173,8 +173,30 @@ typedef NS_ENUM(NSInteger, FDSimulatedCacheMode) {
       @"Delete a section", nil]
      showInView:self.view];
 }
+/*
+ //-------------------------------下部分代码使用方式的研究---------------------------
+ 在分类中监听viewDidLoad的调用，添加输出
+ //------方式一、使用 runtime 的方法调换
+ //------方式二、如下：
+ #import <objc/runtime.h>
+ typedef id   (*_IMP)  (id,SEL,...);
+ typedef void (*_VIMP) (id,SEL,...);
 
-
+ + (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Method viewDidLoad = class_getInstanceMethod(self, @selector(viewDidLoad));
+        // method_getImplementation: 返回方法的实现。
+        _VIMP viewDidLoad_IMP = (_VIMP)method_getImplementation(viewDidLoad);
+        // imp_implementationWithBlock: 创建一个指向调用方法时调用指定块的函数的指针。
+        method_setImplementation(viewDidLoad,imp_implementationWithBlock(^(id target,SEL action) {
+            viewDidLoad_IMP(target,@selector(viewDidLoad));
+            NSLog(@"%@ did load",target);
+        }));
+    });
+ }
+ //----------------------------印象笔记关于 runtime 等有详细介绍---------------------------
+ */
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     // 可以使用 swith 的方式，却还要使用这种方式
     SEL selectors[] = {

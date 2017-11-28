@@ -36,7 +36,7 @@ typedef void (^TYRequestFailureBlock)(id<TYRequestProtocol> request,NSError *err
 
 @property (nonatomic, weak) id<TYRequestDelegate> delegate; // 请求代理
 @property (nonatomic, strong) id<TYRequestDelegate> embedAccesory; // 完成请求代理 后调用 注意strong
-// ------------------------以上都是协议中的 property，get/set 方法申明---------------
+// ------------以上都是TYRequestProtocol协议中的 property，只有get/set 方法申明-------------
 
 @property (nonatomic, assign) BOOL asynCompleteQueue; // 在异步线程中回调 默认NO
 

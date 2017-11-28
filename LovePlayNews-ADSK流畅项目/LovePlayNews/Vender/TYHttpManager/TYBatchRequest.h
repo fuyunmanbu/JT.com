@@ -4,7 +4,8 @@
 //
 //  Created by tany on 16/5/27.
 //  Copyright © 2016年 tany. All rights reserved.
-//
+
+// 预计：该类是用于(批量)处理请求逻辑，将请求的方法孤立了出去
 
 #import <Foundation/Foundation.h>
 #import "TYRequestProtocol.h"
@@ -15,21 +16,22 @@ typedef void (^TYBatchRequestFailureBlock)(TYBatchRequest *request,NSError *erro
 
 @interface TYBatchRequest : NSObject
 
+// 以下两个属性在.m文件均有不只读属性
 @property (nonatomic, strong, readonly) NSArray *batchRequstArray;
 @property (nonatomic, assign, readonly) NSInteger requestCompleteCount;
 
 @property (nonatomic, copy, readonly) TYBatchRequestSuccessBlock successBlock; // 请求成功block
 @property (nonatomic, copy, readonly) TYBatchRequestFailureBlock failureBlock; // 请求失败block
-
+// 添加一个请求
 - (void)addRequest:(id<TYRequestProtocol>)request;
-
+// 添加一组请求
 - (void)addRequestArray:(NSArray *)requestArray;
-
+// 取消某个请求
 - (void)cancleRequest:(id<TYRequestProtocol>)request;
 
 // 设置回调block
-- (void)setRequestSuccessBlock:(TYBatchRequestSuccessBlock)successBlock failureBlock:(TYBatchRequestFailureBlock)failureBlock;
-
+- (void)setRequestSuccessBlock:(TYBatchRequestSuccessBlock)successBlock failureBlock:(TYBatchRequestFailureBlock)failureBlock;// 传进来block回调，并用属性记录block块，在其他地方回调
+// load block
 - (void)loadWithSuccessBlock:(TYBatchRequestSuccessBlock)successBlock failureBlock:(TYBatchRequestFailureBlock)failureBlock;
 
 - (void)load;

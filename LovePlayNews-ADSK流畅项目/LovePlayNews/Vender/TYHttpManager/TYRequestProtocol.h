@@ -19,9 +19,9 @@ typedef NS_ENUM(NSUInteger, TYRequestMethod) {
 };
 
 typedef NS_ENUM(NSInteger , TYRequestSerializerType) {
-    TYRequestSerializerTypeHTTP,
-    TYRequestSerializerTypeJSON,
-    TYRequestSerializerTypeString
+    TYRequestSerializerTypeHTTP,  // http       (该枚举含义待定)
+    TYRequestSerializerTypeJSON,  // json
+    TYRequestSerializerTypeString // 拼接字符串
 };
 
 typedef NS_ENUM(NSUInteger, TYRequestState) {

@@ -5,6 +5,7 @@
 //  Created by tany on 16/5/23.
 //  Copyright © 2016年 tany. All rights reserved.
 
+
 // 一个单利，用于记录 baseURL 和 sessionConfiguration 值
 
 #import <Foundation/Foundation.h>
