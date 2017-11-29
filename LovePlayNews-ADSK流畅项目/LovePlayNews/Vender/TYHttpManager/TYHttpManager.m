@@ -20,6 +20,39 @@
     });
     return sharedInstance;
 }
+/*
+ //    dispatch_queue_t targetQueue = dispatch_queue_create("targetQueue", DISPATCH_QUEUE_SERIAL); //目标队列 DISPATCH_QUEUE_SERIAL 串行队列
+ //    dispatch_queue_t queue3 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+ //    设置参考
+ //    dispatch_set_target_queue(targetQueue, queue3);
+ //    dispatch_async(targetQueue, ^{
+ //        NSLog(@"job3 in");
+ //        NSLog(@"%@",[NSThread currentThread]);
+ //        [NSThread sleepForTimeInterval:2.f];
+ //        NSLog(@"job3 out");
+ //    });
+ //    dispatch_async(targetQueue, ^{
+ //        NSLog(@"job2 in");
+ //        NSLog(@"%@",[NSThread currentThread]);
+ //        [NSThread sleepForTimeInterval:1.f];
+ //        NSLog(@"job2 out");
+ //    });
+ //    dispatch_async(targetQueue, ^{
+ //        NSLog(@"job1 in");
+ //        NSLog(@"%@",[NSThread currentThread]);
+ //        [NSThread sleepForTimeInterval:3.f];
+ //        NSLog(@"job1 out");
+ //    });
+ //    2017-11-29 14:35:50.418861+0800 moreText[53592:2673671] job3 in
+ //    2017-11-29 14:35:50.419310+0800 moreText[53592:2673671] <NSThread: 0x60000046b980>{number = 5, name = (null)}
+ //    2017-11-29 14:35:52.424435+0800 moreText[53592:2673671] job3 out
+ //    2017-11-29 14:35:52.424731+0800 moreText[53592:2673671] job2 in
+ //    2017-11-29 14:35:52.425534+0800 moreText[53592:2673671] <NSThread: 0x60000046b980>{number = 5, name = (null)}
+ //    2017-11-29 14:35:53.430701+0800 moreText[53592:2673671] job2 out
+ //    2017-11-29 14:35:53.431008+0800 moreText[53592:2673671] job1 in
+ //    2017-11-29 14:35:53.431276+0800 moreText[53592:2673671] <NSThread: 0x60000046b980>{number = 5, name = (null)}
+ //    2017-11-29 14:35:56.431777+0800 moreText[53592:2673671] job1 out
+ */
 // 该方法是产生一个串行队列，与全局并发队列同优先级，执行方式是同步的
 + (dispatch_queue_t)completeQueue {
     static dispatch_queue_t completeQueue = NULL;
@@ -31,6 +64,7 @@
 //        dispatch_set_target_queue()函数为你自己创建的队列指定优先级，这个过程还需借助我们的全局队列。下方的代码段中我们先创建了一个串行队列，然后通过该函数将全局队列中的高优先级赋值给我们刚创建的这个串行队列
 //        dispatch_set_target_queue除了能用来设置队列的优先级之外，还能够创建队列的层次体系，当我们想让不同队列中的任务同步（sync）的执行时，我们可以创建一个串行队列，然后将这些队列的target指向新创建的队列即可
 //        dispatch_set_target_queue将多个串行的queue指定到了同一目标，那么多个串行queue在目标queue上就是同步(sync)执行的，不再是并行(async)执行
+        // https://www.cnblogs.com/denz/archive/2016/02/24/5214297.html
         
         // DISPATCH_QUEUE_PRIORITY_DEFAULT 优先级 默认（中）
         // dispatch_get_global_queue 获得全局并发队列

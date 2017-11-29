@@ -5,7 +5,7 @@
 //  Created by tany on 16/5/27.
 //  Copyright © 2016年 tany. All rights reserved.
 
-// 预计：该类是用于(批量)处理请求逻辑，将请求的方法孤立了出去
+// 预计：该类是用于(批量)处理请求逻辑，将请求的实现方法孤立了出去
 
 #import <Foundation/Foundation.h>
 #import "TYRequestProtocol.h"
@@ -16,7 +16,7 @@ typedef void (^TYBatchRequestFailureBlock)(TYBatchRequest *request,NSError *erro
 
 @interface TYBatchRequest : NSObject
 
-// 以下两个属性在.m文件均有不只读属性
+// 以下两个属性在.m文件均有可写属性
 @property (nonatomic, strong, readonly) NSArray *batchRequstArray;
 @property (nonatomic, assign, readonly) NSInteger requestCompleteCount;
 
@@ -30,7 +30,7 @@ typedef void (^TYBatchRequestFailureBlock)(TYBatchRequest *request,NSError *erro
 - (void)cancleRequest:(id<TYRequestProtocol>)request;
 
 // 设置回调block
-- (void)setRequestSuccessBlock:(TYBatchRequestSuccessBlock)successBlock failureBlock:(TYBatchRequestFailureBlock)failureBlock;// 传进来block回调，并用属性记录block块，在其他地方回调
+- (void)setRequestSuccessBlock:(TYBatchRequestSuccessBlock)successBlock failureBlock:(TYBatchRequestFailureBlock)failureBlock;// 传进来block回调，并用属性记录block块，在其他地方回调，用上面两个block属性记录
 // load block
 - (void)loadWithSuccessBlock:(TYBatchRequestSuccessBlock)successBlock failureBlock:(TYBatchRequestFailureBlock)failureBlock;
 

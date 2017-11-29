@@ -19,6 +19,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
+        // 该属性设置默认值
         _chainRequstArray = [NSMutableArray array];
     }
     return self;
@@ -27,6 +28,7 @@
 - (void)addRequest:(id<TYRequestProtocol>)request
 {
     if (_isLoading) {
+        // TYChainRequest正在运行，无法添加请求
         NSLog(@"TYChainRequest is Running,can't add request");
         return;
     }
