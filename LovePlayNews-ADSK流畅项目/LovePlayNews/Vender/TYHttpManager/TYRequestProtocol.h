@@ -26,10 +26,10 @@ typedef NS_ENUM(NSInteger , TYRequestSerializerType) {
 
 typedef NS_ENUM(NSUInteger, TYRequestState) {
     TYRequestStateReady,
-    TYRequestStateLoading,
-    TYRequestStateCancle,
-    TYRequestStateFinish,
-    TYRequestStateError
+    TYRequestStateLoading, // 正在loading
+    TYRequestStateCancle,  // 请求取消
+    TYRequestStateFinish,   // 请求成功
+    TYRequestStateError     //请求失败
 };
 // 提取申明，因为下文需要申明该协议名称
 // 'AFMultipartFormData`协议在`AFHTTPRequestSerializer -multipartFormRequestWithMethod：URLString：parameters：constructBodyWithBlock：`的block参数中定义了参数支持的方法。

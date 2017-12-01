@@ -13,7 +13,7 @@ typedef void (^TYRequestFailureBlock)(id<TYRequestProtocol> request,NSError *err
 
 @protocol TYRequestOverride <NSObject>
 
-// 收到请求数据， 如果error == nil
+// 收到请求返回的数据， 如果error == nil
 - (void)requestDidResponse:(id)responseObject error:(NSError *)error;
 
 // 验证请求数据
@@ -41,6 +41,7 @@ typedef void (^TYRequestFailureBlock)(id<TYRequestProtocol> request,NSError *err
 @property (nonatomic, assign) BOOL asynCompleteQueue; // 在异步线程中回调 默认NO
 
 #pragma mark - block
+// 这两个属性用于记录下面两个方法的block回调（这里是只读属性，.m文件内有局部属性）
 @property (nonatomic, copy, readonly) TYRequestSuccessBlock successBlock; // 请求成功block
 @property (nonatomic, copy, readonly) TYRequestFailureBlock failureBlock; // 请求失败block
 
@@ -80,7 +81,7 @@ typedef void (^TYRequestFailureBlock)(id<TYRequestProtocol> request,NSError *err
 
 // 设置回调block
 - (void)setRequestSuccessBlock:(TYRequestSuccessBlock)successBlock failureBlock:(TYRequestFailureBlock)failureBlock;
-
+// 设置回调block，并调用load方法
 - (void)loadWithSuccessBlock:(TYRequestSuccessBlock)successBlock failureBlock:(TYRequestFailureBlock)failureBlock;
 
 // 取消

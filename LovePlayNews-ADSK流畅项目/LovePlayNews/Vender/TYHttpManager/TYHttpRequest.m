@@ -18,6 +18,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
+        // 设置默认缓存时间
         _cacheTimeInSeconds = 60*60*24*7;
     }
     return self;
@@ -75,7 +76,9 @@
 {
     id<TYHttpResponseParser> responseParser = [self responseParser];
     if (responseParser == nil) {
+        // 如果是nil，不做任何操作(这句代码有何意义？)
         [self cacheRequsetResponse:responseObject];
+        // 执行父类的方法，这里没值，返回NO
         return [super validResponseObject:responseObject error:error];
     }
     
@@ -91,20 +94,22 @@
 }
 
 #pragma mark - private
-
+// 对传进来的参数进行进行存储操作(会自动判断是否可以缓存)
 - (void)cacheRequsetResponse:(id)responseObject
 {
+    //是否有值/是否需要缓存/且该参数值没有缓存过
     if (responseObject && _cacheResponse && !_responseFromCache) {
         NSString *urlKey = [self serializeURLKey];
-        [[self responseCache]setObject:responseObject forKey:urlKey];
+        // 将下面获取的URL拼接路径当作key，存储这个值（这里是调用协议的方法）
+        [[self responseCache] setObject:responseObject forKey:urlKey];
     }
 }
-// 拼装url key
+// 拼装url key（获取链接URL全路径，并拼接上必要的参数）
 - (NSString *)serializeURLKey
 {
-    NSDictionary *paramters = [self parameters];
-    NSArray *ignoreParamterKeys = [self cacheIgnoreParamtersKeys];
-    if (ignoreParamterKeys) {
+    NSDictionary *paramters = [self parameters];// 请求参数
+    NSArray *ignoreParamterKeys = [self cacheIgnoreParamtersKeys];// 缓存忽略的某些Paramters的key
+    if (ignoreParamterKeys) {// 如果有需要忽略的
         NSMutableDictionary *fiterParamters = [NSMutableDictionary dictionaryWithDictionary:paramters];
         [fiterParamters removeObjectsForKeys:ignoreParamterKeys];
         paramters = fiterParamters;
@@ -113,15 +118,18 @@
     return [URLString stringByAppendingString:[self serializeParams:paramters]];
 }
 
-// 拼接params
+// 拼接params(返回params拼接成的字符串，已进行URL编码)
 - (NSString *)serializeParams:(NSDictionary *)params {
     NSMutableArray *parts = [NSMutableArray array];
     [params enumerateKeysAndObjectsUsingBlock:^(id key, id<NSObject> obj, BOOL *stop) {
+        //NSString进行URL编码 打印：http://abc.com?aaa=%E4%BD%A0%E5%A5%BD&amp;bbb=tttee
         NSString *encodedKey = [key stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
         NSString *encodedValue = [obj.description stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-        NSString *part = [NSString stringWithFormat: @"%@=%@", encodedKey, encodedValue];
+        
+        NSString *part = [NSString stringWithFormat:@"%@=%@", encodedKey, encodedValue];
         [parts addObject: part];
     }];
+//    数组转换为字符串
     NSString *queryString = [parts componentsJoinedByString: @"&"];
     return queryString?[NSString stringWithFormat:@"?%@", queryString]:@"";
 }

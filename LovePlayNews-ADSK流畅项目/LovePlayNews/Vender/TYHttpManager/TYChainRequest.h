@@ -20,6 +20,7 @@ typedef void (^TYChainRequestFailureBlock)(TYChainRequest *request,NSError *erro
 @property (nonatomic, strong, readonly) NSArray *chainRequstArray;
 @property (nonatomic, assign, readonly) NSInteger curRequestIndex;
 
+// 这两个属性用于记录下面两个方法的block回调（这里是只读属性，.m文件内有局部属性）
 @property (nonatomic, copy, readonly) TYChainRequestSuccessBlock successBlock; // 请求成功block
 @property (nonatomic, copy, readonly) TYChainRequestFailureBlock failureBlock; // 请求失败block
 

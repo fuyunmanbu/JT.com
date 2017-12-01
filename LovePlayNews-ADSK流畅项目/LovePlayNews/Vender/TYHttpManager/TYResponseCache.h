@@ -4,7 +4,8 @@
 //
 //  Created by tany on 16/5/24.
 //  Copyright © 2016年 tany. All rights reserved.
-//
+
+// 该类主要用于对文件的缓存和删除逻辑操作
 
 #import <Foundation/Foundation.h>
 

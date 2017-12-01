@@ -20,6 +20,7 @@ typedef void (^TYBatchRequestFailureBlock)(TYBatchRequest *request,NSError *erro
 @property (nonatomic, strong, readonly) NSArray *batchRequstArray;
 @property (nonatomic, assign, readonly) NSInteger requestCompleteCount;
 
+// 这两个属性用于记录下面两个方法的block回调（这里是只读属性，.m文件内有局部属性）
 @property (nonatomic, copy, readonly) TYBatchRequestSuccessBlock successBlock; // 请求成功block
 @property (nonatomic, copy, readonly) TYBatchRequestFailureBlock failureBlock; // 请求失败block
 // 添加一个请求
