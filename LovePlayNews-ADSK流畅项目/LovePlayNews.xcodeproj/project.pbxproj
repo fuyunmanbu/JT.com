@@ -330,6 +330,7 @@
 		2BEDE9241D7D6B060009DADB /* LPZoneDiscuzCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPZoneDiscuzCellNode.m; sourceTree = "<group>"; };
 		2BEDE9261D7D74A40009DADB /* LPDiscuzHeaderNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDiscuzHeaderNode.h; sourceTree = "<group>"; };
 		2BEDE9271D7D74A40009DADB /* LPDiscuzHeaderNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDiscuzHeaderNode.m; sourceTree = "<group>"; };
+		395A7E461FD3A9A0007E3003 /* 总结.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "总结.h"; sourceTree = "<group>"; };
 		4D4BA0AA1064CB12BA750010 /* Pods-LovePlayNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LovePlayNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LovePlayNews/Pods-LovePlayNews.debug.xcconfig"; sourceTree = "<group>"; };
 		97F536CF2561A47B92A45EF3 /* Pods-LovePlayNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LovePlayNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-LovePlayNews/Pods-LovePlayNews.release.xcconfig"; sourceTree = "<group>"; };
 		B00A86C01D729E1100B84F8F /* LPWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPWebViewController.h; sourceTree = "<group>"; };
@@ -830,6 +831,7 @@
 		2B8174E21D4F39A400BA297C /* TYHttpManager */ = {
 			isa = PBXGroup;
 			children = (
+				395A7E461FD3A9A0007E3003 /* 总结.h */,
 				2B8174ED1D4F39A400BA297C /* TYRequestProtocol.h */,
 				2B8174E31D4F39A400BA297C /* TYBaseRequest.h */,
 				2B8174E41D4F39A400BA297C /* TYBaseRequest.m */,

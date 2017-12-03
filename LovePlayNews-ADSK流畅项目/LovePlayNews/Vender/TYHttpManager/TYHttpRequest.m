@@ -29,6 +29,8 @@
 - (id<TYHttpResponseCache>)responseCache
 {
     if (_responseCache == nil) {
+        // 奇怪：该类没有遵守该协议，可以直接懒加载成为该值，是因为有实现该协议的相同方法嘛？
+        // 经过观察，在该文件的头部有声明 TYResponseCache 类遵守 TYHttpResponseCache 协议，与上面的猜测没有关系
         _responseCache = [[TYResponseCache alloc]init];
     }
     return _responseCache;
@@ -38,7 +40,7 @@
 {
     _responseFromCache = NO;
     if (_requestFromCache && _cacheTimeInSeconds >= 0) {
-        // 从缓存中获取
+        // 从缓存中获取数据，无需网络请求
         [self loadResponseFromCache];
     }
     //NSLog(@"responseFromCache %d",_responseFromCache);
@@ -100,7 +102,7 @@
     //是否有值/是否需要缓存/且该参数值没有缓存过
     if (responseObject && _cacheResponse && !_responseFromCache) {
         NSString *urlKey = [self serializeURLKey];
-        // 将下面获取的URL拼接路径当作key，存储这个值（这里是调用协议的方法）
+        // 将下面获取的URL拼接路径当作key，存储这个值（这里是调用协议的方法,未验证）
         [[self responseCache] setObject:responseObject forKey:urlKey];
     }
 }

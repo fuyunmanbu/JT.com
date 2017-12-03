@@ -63,7 +63,7 @@
 }
 
 #pragma mark - call delegate , block
-// 收到请求返回的数据
+// 收到请求后返回的数据
 - (void)requestDidResponse:(id)responseObject error:(NSError *)error
 {
     if (error) {

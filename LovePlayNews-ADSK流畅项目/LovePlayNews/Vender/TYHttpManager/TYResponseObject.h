@@ -23,10 +23,10 @@
 // 初始化方法
 - (instancetype)initWithModelClass:(Class)modelClass;
 
-// 验证
+// 验证(处理掉错误的可能，确保数据正确)
 - (BOOL)isValidResponse:(id)response request:(TYHttpRequest *)request error:(NSError *__autoreleasing *)error;
 
-// 解析 返回ResponseObject
+// 解析 返回ResponseObject（记录 response 数据）
 - (id)parseResponse:(id)response request:(TYHttpRequest *)request;
 
 @end

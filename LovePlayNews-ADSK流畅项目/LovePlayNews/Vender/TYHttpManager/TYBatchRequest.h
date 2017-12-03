@@ -34,9 +34,9 @@ typedef void (^TYBatchRequestFailureBlock)(TYBatchRequest *request,NSError *erro
 - (void)setRequestSuccessBlock:(TYBatchRequestSuccessBlock)successBlock failureBlock:(TYBatchRequestFailureBlock)failureBlock;// 传进来block回调，并用属性记录block块，在其他地方回调，用上面两个block属性记录
 // load block
 - (void)loadWithSuccessBlock:(TYBatchRequestSuccessBlock)successBlock failureBlock:(TYBatchRequestFailureBlock)failureBlock;
-
+// 发动数组里每一个参数的请求方法
 - (void)load;
-
+// 取消所有正在执行/未执行的方法，设置状态
 - (void)cancle;
 
 @end
