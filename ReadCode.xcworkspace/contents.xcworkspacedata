@@ -21,8 +21,12 @@
    <Group
       location = "container:"
       name = "&#x5df2;&#x8bfb;">
-      <FileRef
-         location = "group:FDTemplateLayoutCell-&#x6d41;&#x7545;&#x6027;&#x6ce8;&#x91ca;/Demo/Demo.xcodeproj">
-      </FileRef>
+      <Group
+         location = "container:"
+         name = "FDTemplateLayoutCell-&#x6d41;&#x7545;&#x6027;&#x6ce8;&#x91ca;">
+         <FileRef
+            location = "group:FDTemplateLayoutCell-&#x6d41;&#x7545;&#x6027;&#x6ce8;&#x91ca;/Demo/Demo.xcodeproj">
+         </FileRef>
+      </Group>
    </Group>
 </Workspace>
