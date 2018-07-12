@@ -324,23 +324,46 @@ kbd {
 </style>
 
 <style type="text/css">
-/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
+/*
+ Solarized Color Schemes originally by Ethan Schoonover
+ http://ethanschoonover.com/solarized
+
+ Ported for PrismJS by Hector Matos
+ Website: https://krakendev.io
+ Twitter Handle: https://twitter.com/allonsykraken)
+*/
+
+/*
+SOLARIZED HEX
+--------- -------
+base03    #002b36
+base02    #073642
+base01    #586e75
+base00    #657b83
+base0     #839496
+base1     #93a1a1
+base2     #eee8d5
+base3     #fdf6e3
+yellow    #b58900
+orange    #cb4b16
+red       #dc322f
+magenta   #d33682
+violet    #6c71c4
+blue      #268bd2
+cyan      #2aa198
+green     #859900
+*/
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	color: #657b83; /* base00 */
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
+
 	line-height: 1.5;
 
 	-moz-tab-size: 4;
@@ -353,6 +376,16 @@ pre[class*="language-"] {
 	hyphens: none;
 }
 
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	background: #073642; /* base02 */
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	background: #073642; /* base02 */
+}
+
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
@@ -363,25 +396,24 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #272822;
+	background-color: #fdf6e3; /* base3 */
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
 	padding: .1em;
 	border-radius: .3em;
-	white-space: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: slategray;
+	color: #93a1a1; /* base1 */
 }
 
 .token.punctuation {
-	color: #f8f8f2;
+	color: #586e75; /* base01 */
 }
 
 .namespace {
@@ -390,15 +422,12 @@ pre[class*="language-"] {
 
 .token.property,
 .token.tag,
+.token.boolean,
+.token.number,
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-	color: #ae81ff;
+	color: #268bd2; /* blue */
 }
 
 .token.selector,
@@ -406,32 +435,30 @@ pre[class*="language-"] {
 .token.string,
 .token.char,
 .token.builtin,
+.token.url,
 .token.inserted {
-	color: #a6e22e;
+	color: #2aa198; /* cyan */
 }
 
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-	color: #f8f8f2;
+.token.entity {
+	color: #657b83; /* base00 */
+	background: #eee8d5; /* base2 */
 }
 
 .token.atrule,
 .token.attr-value,
-.token.function {
-	color: #e6db74;
+.token.keyword {
+	color: #859900; /* green */
 }
 
-.token.keyword {
-	color: #66d9ef;
+.token.function {
+	color: #b58900; /* yellow */
 }
 
 .token.regex,
-.token.important {
-	color: #fd971f;
+.token.important,
+.token.variable {
+	color: #cb4b16; /* orange */
 }
 
 .token.important,
@@ -452,7 +479,113 @@ pre[class*="language-"] {
 
 <body>
 
-<p><a href="zhongyijichu/zhongyijichu.html">JT中医基础</a></p>
+<blockquote>
+<p>谭杰中 </p>
+
+<p><code>1970</code>年生，台湾大学日语系毕。从事撰稿、英日语书籍之翻译、编辑等工作十八年，英日文教职工作六年。</p>
+
+<p>略历：</p>
+
+<ul>
+<li>˙<code>2008</code>年：
+
+<ul>
+<li>文山社大『文学与音乐的．日文阅读』授课教师</li>
+</ul></li>
+<li>˙<code>2008</code>年：
+
+<ul>
+<li>文山社大『庄子内七篇与近代心理学的实践』授课教师</li>
+</ul></li>
+<li>˙<code>2007</code>年：
+
+<ul>
+<li>华梵大学『表现力训练与创作实习』兼任讲师</li>
+</ul></li>
+<li>˙<code>2006</code>年：
+
+<ul>
+<li>文化大学推广部『汉方美容 讲座』授课教师</li>
+</ul></li>
+<li>˙<code>2005</code>年：
+
+<ul>
+<li>杏林书城．杏林讲堂『中医基础理论』、『经方本草学』授课教师</li>
+</ul></li>
+<li>˙<code>2005</code>年：
+
+<ul>
+<li>私人授课『心理学与庄子』课程</li>
+</ul></li>
+<li>˙<code>2005</code>年：
+
+<ul>
+<li>私人授课『伤寒论』课程</li>
+</ul></li>
+<li>˙<code>2005</code>年：
+
+<ul>
+<li>演讲活动：东海大学：『一部作品的诠解』／逢甲大学『台湾漫画史』座谈</li>
+</ul></li>
+<li>˙<code>2004</code>年：
+
+<ul>
+<li>杜葳文化《汉方美白 美容鍊金书》作者</li>
+</ul></li>
+<li>˙<code>2004</code>年：
+
+<ul>
+<li>杜葳出版社《中医经典精读系列》丛书执行主编</li>
+</ul></li>
+<li>˙<code>2004</code>年：
+
+<ul>
+<li>杜葳出版社『日文阅读训练（第一期、第二期）』、『日文翻译实战班』授课教  师</li>
+</ul></li>
+<li>˙<code>2004</code>年：
+
+<ul>
+<li>大安出版社『文学的日文阅读』授课教师</li>
+</ul></li>
+<li>˙<code>2003</code>年：
+
+<ul>
+<li>杜葳文化：《Frontier》杂志每月专栏「JT的点唱盒」、「东风书廊」、「日文教室」执笔人。</li>
+</ul></li>
+<li>˙<code>1997年～2004</code>年：
+
+<ul>
+<li>联合报：电子报《联合动漫周报》每周专栏「日用救荒漫画名实图考」执笔人。</li>
+</ul></li>
+<li>˙<code>1997</code>年：
+
+<ul>
+<li>唐山出版社：《CALVIN AND HOBBES》（作者．BILL WATTERSON／专门性之漫画论集）企画、译者、执行编辑，兼版权洽商及美编、印务。</li>
+</ul></li>
+<li>˙<code>1996</code>年：
+
+<ul>
+<li>台湾东贩：出版文集《奇妙的漫画体验》（此乃结集过去数年所撰写之相关动、漫画之杂文、评论文而成书）。</li>
+<li>TVBS：与蔡康永先生共同主持电视节目「翻书触电王」，评介各类书籍及电影、动画。</li>
+<li>智库鲸工作室：同人志《无名的书》非正式出版品，仅以放置书店店头寄卖之方式，创下单店即销售逾千本之成绩。</li>
+</ul></li>
+</ul>
+</blockquote>
+
+<ul>
+<li>JT叔叔，谭杰中
+
+<ul>
+<li><a href="zhongyijichu/zhongyijichu.html">JT中医基础理论</a>
+
+<ul>
+<li><code>2006</code>年古老的中基课</li>
+</ul></li>
+<li>JT庄子</li>
+<li>JT伤寒论</li>
+<li>JT医道课</li>
+</ul></li>
+</ul>
 
 
 
