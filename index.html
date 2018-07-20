@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
+<title>index</title>
 
 
 <style type="text/css">
@@ -324,46 +324,23 @@ kbd {
 </style>
 
 <style type="text/css">
-/*
- Solarized Color Schemes originally by Ethan Schoonover
- http://ethanschoonover.com/solarized
-
- Ported for PrismJS by Hector Matos
- Website: https://krakendev.io
- Twitter Handle: https://twitter.com/allonsykraken)
-*/
-
-/*
-SOLARIZED HEX
---------- -------
-base03    #002b36
-base02    #073642
-base01    #586e75
-base00    #657b83
-base0     #839496
-base1     #93a1a1
-base2     #eee8d5
-base3     #fdf6e3
-yellow    #b58900
-orange    #cb4b16
-red       #dc322f
-magenta   #d33682
-violet    #6c71c4
-blue      #268bd2
-cyan      #2aa198
-green     #859900
-*/
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #657b83; /* base00 */
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
-
 	line-height: 1.5;
 
 	-moz-tab-size: 4;
@@ -376,16 +353,6 @@ pre[class*="language-"] {
 	hyphens: none;
 }
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	background: #073642; /* base02 */
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	background: #073642; /* base02 */
-}
-
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
@@ -396,24 +363,25 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background-color: #fdf6e3; /* base3 */
+	background: #272822;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
 	padding: .1em;
 	border-radius: .3em;
+	white-space: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #93a1a1; /* base1 */
+	color: slategray;
 }
 
 .token.punctuation {
-	color: #586e75; /* base01 */
+	color: #f8f8f2;
 }
 
 .namespace {
@@ -422,12 +390,15 @@ pre[class*="language-"] {
 
 .token.property,
 .token.tag,
-.token.boolean,
-.token.number,
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #268bd2; /* blue */
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
 }
 
 .token.selector,
@@ -435,30 +406,32 @@ pre[class*="language-"] {
 .token.string,
 .token.char,
 .token.builtin,
-.token.url,
 .token.inserted {
-	color: #2aa198; /* cyan */
+	color: #a6e22e;
 }
 
-.token.entity {
-	color: #657b83; /* base00 */
-	background: #eee8d5; /* base2 */
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
 }
 
 .token.atrule,
 .token.attr-value,
-.token.keyword {
-	color: #859900; /* green */
+.token.function {
+	color: #e6db74;
 }
 
-.token.function {
-	color: #b58900; /* yellow */
+.token.keyword {
+	color: #66d9ef;
 }
 
 .token.regex,
-.token.important,
-.token.variable {
-	color: #cb4b16; /* orange */
+.token.important {
+	color: #fd971f;
 }
 
 .token.important,
@@ -478,6 +451,36 @@ pre[class*="language-"] {
 </head>
 
 <body>
+
+<h3 id="toc_0">公告</h3>
+
+<ul>
+<li>《中医基础理论》<strong><u>第十四章及以后部分</u></strong>希望各位能够积极提供相关原文，推快各笔记整理进度</li>
+<li>能看见此笔记的都是有缘人，请加入<code>QQ</code>群<code>523885820</code>，让缘分得已延续</li>
+</ul>
+
+<h3 id="toc_1">专题</h3>
+
+<ul>
+<li>JT中药整理分类</li>
+</ul>
+
+<h3 id="toc_2">原文</h3>
+
+<ul>
+<li>JT叔叔，谭杰中
+
+<ul>
+<li><a href="zhongyijichu/zhongyijichu.html">JT中医基础理论</a>
+
+<ul>
+<li><code>2006</code>年古老的中基课</li>
+</ul></li>
+<li>JT庄子</li>
+<li>JT伤寒论</li>
+<li>JT医道课</li>
+</ul></li>
+</ul>
 
 <blockquote>
 <p>谭杰中 </p>
@@ -571,21 +574,6 @@ pre[class*="language-"] {
 </ul></li>
 </ul>
 </blockquote>
-
-<ul>
-<li>JT叔叔，谭杰中
-
-<ul>
-<li><a href="zhongyijichu/zhongyijichu.html">JT中医基础理论</a>
-
-<ul>
-<li><code>2006</code>年古老的中基课</li>
-</ul></li>
-<li>JT庄子</li>
-<li>JT伤寒论</li>
-<li>JT医道课</li>
-</ul></li>
-</ul>
 
 
 
